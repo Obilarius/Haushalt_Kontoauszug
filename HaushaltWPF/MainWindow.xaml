@@ -1,0 +1,25 @@
+﻿<Window x:Class="HaushaltWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HaushaltWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Width="100" Height="30" Click="OpenFile_Click" Margin="10 0">Datei öffnen</Button>
+            <Button Width="100" Height="30" Click="SaveCSV_Click" Margin="10 0">CSV Speicherm</Button>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel x:Name="ContentWrapper" CanVerticallyScroll="True" MaxWidth="900"/>
+
+        </ScrollViewer>
+    </Grid>
+</Window>

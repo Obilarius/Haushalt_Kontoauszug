@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="HaushaltWPF.ZahlungEntry"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HaushaltWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="700">
+
+    <Border BorderThickness="1 1 1 1" BorderBrush="Gray" Margin="20 1" Padding="10">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Datum, FallbackValue=01.01.1970}"></TextBlock>
+
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Zahlungsart}"/>
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding compVerwendungszweck}"/>
+        
+                <StackPanel Grid.Column="2" HorizontalAlignment="Right" Orientation="Horizontal"> 
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Saldoart}" Value="S">
+                                    <Setter Property="Background" Value="Red"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Saldoart}" Value="H">
+                                    <Setter Property="Background" Value="Green"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+            
+                    <TextBlock Text="{Binding Saldo, FallbackValue=0000, StringFormat=N2}" Padding="5"/>
+                    <TextBlock Text="{Binding Saldoart, FallbackValue=S}" Padding="0 5 5 5"/>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" BorderThickness="1 1 0 1" BorderBrush="Gray" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Fixe Posten" FontWeight="Bold" Padding="0 0 0 10"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel x:Name="SP_fixCat_1" Grid.Column="0"/>
+                            <StackPanel x:Name="SP_fixCat_2" Grid.Column="1"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" BorderThickness="1" BorderBrush="Gray" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Flexible Posten" FontWeight="Bold" Padding="0 0 0 10"/>
+                        <StackPanel x:Name="SP_flexCat"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+        </StackPanel>
+    </Border>
+</UserControl>
