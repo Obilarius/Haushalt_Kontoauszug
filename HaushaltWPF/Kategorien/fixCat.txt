@@ -1,24 +1,31 @@
-﻿Krankenversicherung
+﻿Sascha Gehalt
+Anja Gehalt
+Sonstiges Einkommen
+Krankenversicherung
 Unfallversicherung
 Lebensversicherung
+Berufsunfähigkeitsversicherung
 Haftpflicht
 Hausrat
 Wohngebäudeversicherung
+Gemeinde (Wasser, Abfall)
 Kfz Versicherung
 Kfz Steuer
 Abo
-Aus- & Weiterbildung
 ParkhausgebührSAD
 ADAC
 domainfactory
 HD Plus
 GEZ
 Telefon & Internet
+Strom
+Grundsteuer
 Darlehen (easyCredit)
+Darlehen (820070084)
 Darlehen (120070084)
 Darlehen (920070084)
 Darlehen (220070084)
 Darlehen (MünchnerHypo)
 Kreditkarte
+Abschluss
 Rücklage
-Einkommen
